@@ -1,0 +1,21 @@
+.input {
+  text-align: center;
+  font-weight: bold;
+  color: var(--text-500);
+  border: none;
+  height: var(--clickables-height);
+  width: 100%;
+  border-radius: calc(var(--clickables-height) / 2);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 100%);
+  box-shadow: inset 4px 4px 3px rgba(201,200,200, 0.7), 
+              inset -4px -4px 5px #ffffff;
+  margin-bottom: 16px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-300);
+}

@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 
 // Components
 import Input from './components/Input'
+import Button from './components/Button'
 
 // Hooks
 import usePdfGeneration from './hooks/usePdfGeneration'
@@ -9,6 +10,9 @@ import useUserManagement from './hooks/useUserManagement'
 
 // Utils & misc
 import { formConfig, formReasons } from './constants/formConfig'
+
+// Style
+import style from './App.module.css'
 
 function App() {
   const { register, handleSubmit, reset } = useForm();
@@ -33,7 +37,7 @@ function App() {
   const handleOnUserClick = (userIndex) => reset(getUserInfo(userIndex))
 
   return (
-    <div className="App">
+    <div className={style.main}>
       {getUsers().map((user, index) => (
         <button onClick={() => handleOnUserClick(index)}>{user.firstname}</button>
       ))}
@@ -44,13 +48,13 @@ function App() {
         ))}
 
         {formReasons.map(({ code, label }) => (
-          <label key={code} htmlFor={code}>
+          <label key={code} htmlFor={code} style={{ display: 'block' }}>
             <input ref={register} type="radio" name="reason" id={code} value={code}/>
             {label}
           </label>
         ))}
 
-        <button type="submit">Générer</button>
+        <Button color="primary" type="submit">Générer</Button>
       </form>
     </div>
   );

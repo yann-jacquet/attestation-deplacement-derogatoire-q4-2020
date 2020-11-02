@@ -4,12 +4,14 @@ import PropTypes from 'prop-types'
 // Utils
 import cn from '../../utils/classNames'
 
+// Style
+import style from './Input.module.css'
+
 const Input = React.forwardRef(({ label, className, ...props }, ref) => {
   return (
-    <label htmlFor={props.name} className={cn([className])}>
-      { label }
-      <input ref={ref} {...props} />
-    </label>
+    <div className={cn([className])}>
+      <input className={cn([style.input])} ref={ref} {...props} />
+    </div>
   )
 })
 
