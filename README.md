@@ -1,44 +1,29 @@
-# Générateur de certificat de déplacement
+# Attestation de sortie Octobre 2020
 
-## Développer
+## Available Scripts
 
-### Installer le projet
+In the project directory, you can run:
 
-```console
-git clone https://github.com/LAB-MI/attestation-deplacement-derogatoire-q4-2020.git
-cd attestation-deplacement-derogatoire-q4-2020
-npm i
-npm start
-```
+### `yarn start`
 
-## Générer et tester le code de production
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Tester le code de production en local
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-#### Générer le code de production pour tester que le build fonctionne en entier
+### `yarn test`
 
-```console
-npm run build:dev
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-#### Tester le code de production en local
+### `yarn build`
 
-```console
-npx serve dist
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Et visiter http://localhost:5000
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Le code à déployer sera le contenu du dossier `dist`
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Crédits
-
-Ce projet a été réalisé à partir d'un fork du dépôt [deplacement-covid-19](https://github.com/nesk/deplacement-covid-19) de lui-même réalisé à partir d'un fork du dépôt [covid-19-certificate](https://github.com/nesk/covid-19-certificate) de [Johann Pardanaud](https://github.com/nesk).
-
-Les projets open source suivants ont été utilisés pour le développement de ce
-service :
-
-- [PDF-LIB](https://pdf-lib.js.org/)
-- [qrcode](https://github.com/soldair/node-qrcode)
-- [Bootstrap](https://getbootstrap.com/)
-- [Font Awesome](https://fontawesome.com/license)
