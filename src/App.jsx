@@ -24,7 +24,6 @@ function App() {
   const { getUsers, getUserInfo, saveUser } = useUserManagement()
 
   const onSubmit = async (formData) => {
-    console.log('submit data')
     const today = new Date()
     const datesortie = today.toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' })
     const heuresortie = today.toLocaleTimeString('fr-FR')
@@ -35,7 +34,6 @@ function App() {
     }
     const pdf = await getPdfUrl(pdfData)
 
-    console.log('submit data', pdfData)
     saveUser(formData)
     downloadPdf(pdf, `attestation-${formData.firstname}-${datesortie}-${heuresortie}.pdf`)
   }
@@ -70,8 +68,7 @@ function App() {
           <Radio key={code} label={label} ref={register} name="reason" id={code} value={code}/>
         ))}
 
-        <Button color="primary" type="submit" disabled={!formState.isValid} >Générer</Button>
-        {console.log(formState, formState.isValid, errors)}
+        <Button color="primary" type="submit">Générer</Button>
       </form>
       
       <footer className={style.footer}>
