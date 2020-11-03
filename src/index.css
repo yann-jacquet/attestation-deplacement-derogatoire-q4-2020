@@ -1,6 +1,6 @@
 :root {
   /* Colors */
-  --main-bg: #f3f3f3;
+  --main-bg: #eeeeee;
   --white: #fff;
   --primary-300: #C3CFE8;
   --primary-500: #6886c5;
@@ -34,4 +34,15 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--text-500);
 }
