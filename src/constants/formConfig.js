@@ -4,51 +4,51 @@ export const formConfig = [
     type: "text",
     label: "Prénom",
     autoComplete: "given-name",
-    placeholder: "Camille"
+    placeholder: "Prénom"
   },
   {
     name: "lastname",
     type: "text",
     label: "Nom",
     autoComplete: "family-name",
-    placeholder: "Dupont"
+    placeholder: "Nom"
   },
   {
     name: "birthday",
     type: "text",
-    label: "Date de naissance",
+    label: "Date de naissance : 01/01/1989",
     autoComplete: "birthday",
     pattern: "^([0][1-9]|[1-2][0-9]|30|31)\/([0][1-9]|10|11|12)\/(19[0-9][0-9]|20[0-1][0-9]|2020)",
     maxLength: 10,
-    placeholder: "01/01/1970"
+    placeholder: "Date de naissance : 01/01/1989"
   },
   {
     name: "placeofbirth",
     type: "text",
     label: "Lieu de naissance",
     autoComplete: "off",
-    placeholder: "Paris"
+    placeholder: "Lieu de naissance"
   },
   {
     name: "address",
     type: "text",
     label: "Adresse",
     autoComplete: "adress-line1",
-    placeholder: "999 avenue de France"
+    placeholder: "Adresse"
   },
   {
     name: "city",
     type: "text",
     label: "Ville",
     autoComplete: "address-level2",
-    placeholder: "Paris"
+    placeholder: "Ville"
   },
   {
     name: "zipcode",
     type: "number",
     label: "Code Postal",
     autoComplete: "postal-code",
-    placeholder: "75001",
+    placeholder: "Code Postal",
     inputMode: "numeric",
     pattern: "[0-9]{5}",
     min: 1000,
@@ -61,11 +61,11 @@ export const formConfig = [
 export const formReasons = [
   {
     code: "travail",
-    label: "Déplacements entre le domicile et le lieu d'exercice de l'activité professionnelle ou les déplacements professionnels ne pouvant être différés <a class=\"footnote\" id=\"footnote2\" href=\"#footnote2\">[2]</a> ;"
+    label: "Déplacements entre le domicile et le lieu d'exercice de l'activité professionnelle ou les déplacements professionnels ne pouvant être différés"
   },
   {
     code: "achats",
-    label: "Déplacements pour effectuer des achats de fournitures nécessaires à l'activité professionnelle, des achats de première nécessité <a class=\"footnote\" id=\"footnote3\" href=\"#footnote3\">[3]</a> dans des établissements dont les activités demeurent autorisées (liste sur gouvernement.fr) et les livraisons à domicile ;"
+    label: "Déplacements pour effectuer des achats de fournitures nécessaires à l'activité professionnelle, des achats de première nécessité"
   },
   {
     code: "sante",

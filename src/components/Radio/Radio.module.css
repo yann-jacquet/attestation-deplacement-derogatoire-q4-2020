@@ -1,0 +1,66 @@
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding-left: calc(var(--clickables-height) + 16px);
+  margin-bottom: 24px;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radio {
+  height: var(--clickables-height);
+  width: var(--clickables-height);
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 100%);
+  box-shadow: inset 0 0 0 rgba(201,200,200, 0.7), 
+              inset 0 0 0 #ffffff,
+              4px 4px 6px rgba(201,200,200, 1), 
+             -4px -4px 6px #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition-property: box-shadow;
+  transition: 0.3s ease-in-out;
+}
+
+.radio::before {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid var(--text-500);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition-property: background-color;
+  transition: 0.3s ease-in-out;
+}
+
+.container:hover .radio {
+  box-shadow:  inset 4px 4px 3px rgba(201,200,200, 0.7),
+                inset -4px -4px 5px #ffffff,
+                0 0 0 rgba(201,200,200, 1), 
+                0 0 0 #ffffff;
+}
+
+.container input:checked ~ .radio::before {
+  background-color: var(--text-500);
+}
+
+.container input:checked ~ .radio {
+  box-shadow:  inset 4px 4px 3px rgba(201,200,200, 0.7),
+                inset -4px -4px 5px #ffffff,
+                0 0 0 rgba(201,200,200, 1), 
+                0 0 0 #ffffff;
+}

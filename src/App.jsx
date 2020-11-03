@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 // Components
 import Input from './components/Input'
 import Button from './components/Button'
+import Radio from './components/Radio'
 
 // Hooks
 import usePdfGeneration from './hooks/usePdfGeneration'
@@ -48,10 +49,7 @@ function App() {
         ))}
 
         {formReasons.map(({ code, label }) => (
-          <label key={code} htmlFor={code} style={{ display: 'block' }}>
-            <input ref={register} type="radio" name="reason" id={code} value={code}/>
-            {label}
-          </label>
+          <Radio key={code} label={label} ref={register} name="reason" id={code} value={code}/>
         ))}
 
         <Button color="primary" type="submit">Générer</Button>
