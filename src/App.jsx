@@ -19,7 +19,7 @@ import cn from './utils/classNames'
 import style from './App.module.css'
 
 function App() {
-  const { register, handleSubmit, reset, watch, errors, formState } = useForm();
+  const { register, handleSubmit, reset, watch, formState } = useForm();
   const { getPdfUrl, downloadPdf } = usePdfGeneration()
   const { getUsers, getUserInfo, saveUser } = useUserManagement()
 

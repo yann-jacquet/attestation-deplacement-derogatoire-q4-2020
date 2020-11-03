@@ -1,8 +1,9 @@
 import { generatePdf } from '../utils/pdf'
+import pdfTemplate from '../asset/certificate.pdf'
 
 const usePdfGeneration = () => {
   const getPdfUrl = async (formValues) => {
-    const pdfBlob = await generatePdf(formValues, formValues.reason, '/certificate.pdf')
+    const pdfBlob = await generatePdf(formValues, formValues.reason, pdfTemplate)
 
     return pdfBlob
   }
