@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import Input from './components/Input'
 import Button from './components/Button'
 import Radio from './components/Radio'
+import PictoButton from './components/PictoButton'
 
 // Hooks
 import usePdfGeneration from './hooks/usePdfGeneration'
@@ -16,7 +17,7 @@ import { formConfig, formReasons } from './constants/formConfig'
 import style from './App.module.css'
 
 function App() {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, watch, errors, formState } = useForm();
   const { getPdfUrl, downloadPdf } = usePdfGeneration()
   const { getUsers, getUserInfo, saveUser } = useUserManagement()
 
@@ -37,22 +38,30 @@ function App() {
 
   const handleOnUserClick = (userIndex) => reset(getUserInfo(userIndex))
 
+  const isUserActive = (user) => user.firstname === watch("firstname")
+
   return (
     <div className={style.main}>
-      {getUsers().map((user, index) => (
-        <button onClick={() => handleOnUserClick(index)}>{user.firstname}</button>
-      ))}
+      <div>
+        {getUsers().length > 0
+          ? getUsers().map((user, index) => (
+            <PictoButton key={user.birthday} onClick={() => handleOnUserClick(index)} label={user.firstname} picto="user" isActive={isUserActive(user)}/>
+          ))
+          : null
+        }
+        <PictoButton onClick={() => handleOnUserClick(-1)} label="Nouveau" picto="userAdd" isActive={!getUsers().length}/>
+      </div>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         {formConfig.map(field => (
-          <Input key={field.name} ref={register} {...field} />
+          <Input key={field.name} ref={register({ required: 'Ce champs est obligatoire' })} {...field} />
         ))}
 
         {formReasons.map(({ code, label }) => (
           <Radio key={code} label={label} ref={register} name="reason" id={code} value={code}/>
         ))}
 
-        <Button color="primary" type="submit">Générer</Button>
+        <Button color="primary" type="submit" disabled={!formState.isValid} >Générer</Button>
       </form>
     </div>
   );

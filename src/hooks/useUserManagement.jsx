@@ -30,7 +30,7 @@ const useUserManagement = () => {
 
   const getUsers = () => users
 
-  const getUserInfo = (userIndex) => users[userIndex]
+  const getUserInfo = (userIndex) => userIndex !== -1 ? users[userIndex] : {}
 
   return {
     addNewUser,
