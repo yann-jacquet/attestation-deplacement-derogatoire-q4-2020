@@ -19,7 +19,7 @@ import cn from './utils/classNames'
 import style from './App.module.css'
 
 function App() {
-  const { register, handleSubmit, reset, watch, formState } = useForm();
+  const { register, handleSubmit, reset, watch, formState, errors } = useForm();
   const { getPdfUrl, downloadPdf } = usePdfGeneration()
   const { getUsers, getUserInfo, saveUser } = useUserManagement()
 
@@ -71,6 +71,7 @@ function App() {
         ))}
 
         <Button color="primary" type="submit" disabled={!formState.isValid} >Générer</Button>
+        {console.log(formState, formState.isValid, errors)}
       </form>
       
       <footer className={style.footer}>
