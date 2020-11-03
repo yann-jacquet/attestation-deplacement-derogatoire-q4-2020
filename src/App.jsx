@@ -24,6 +24,7 @@ function App() {
   const { getUsers, getUserInfo, saveUser } = useUserManagement()
 
   const onSubmit = async (formData) => {
+    console.log('submit data')
     const today = new Date()
     const datesortie = today.toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' })
     const heuresortie = today.toLocaleTimeString('fr-FR')
@@ -34,6 +35,7 @@ function App() {
     }
     const pdf = await getPdfUrl(pdfData)
 
+    console.log('submit data', pdfData)
     saveUser(formData)
     downloadPdf(pdf, `attestation-${formData.firstname}-${datesortie}-${heuresortie}.pdf`)
   }

@@ -1,9 +1,11 @@
 import { generatePdf } from '../utils/pdf'
-import pdfTemplate from '../asset/certificate.pdf'
+// import pdfTemplate from '../asset/certificate.pdf'
+
+const pdfLink = 'https://media.interieur.gouv.fr/deplacement-covid-19/certificate.d1673940.pdf'
 
 const usePdfGeneration = () => {
   const getPdfUrl = async (formValues) => {
-    const pdfBlob = await generatePdf(formValues, formValues.reason, pdfTemplate)
+    const pdfBlob = await generatePdf(formValues, formValues.reason, pdfLink)
 
     return pdfBlob
   }
